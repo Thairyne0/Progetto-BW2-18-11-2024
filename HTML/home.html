@@ -148,12 +148,14 @@
         <div class="row">
           <div class="col d-none d-lg-flex col-lg-3"></div>
           <div class="col col-12 col-lg-9" style="background-color: #202020">
-            <div class="row justify-content-between">
+            <div class="row justify-content-between mt-2">
               <div class="col col-6">
                 <button
                   type="button"
                   class="btn rounded-circle text-light"
                   style="background-color: #121212"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="prev"
                 >
                   <i class="bi bi-caret-left"></i>
                 </button>
@@ -161,6 +163,8 @@
                   type="button"
                   class="btn rounded-circle text-light"
                   style="background-color: #121212"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="next"
                 >
                   <i class="bi bi-caret-right"></i>
                 </button>
@@ -187,8 +191,120 @@
                 </ul>
               </div>
             </div>
-            <div class="row">
+            <div class="row p-2">
               <!-- inizio carousel -->
+              <div
+                id="carouselExample"
+                class="carousel slide rounded d-none d-sm-block"
+                style="
+                  background: linear-gradient(
+                    7deg,
+                    rgba(0, 0, 0, 1) 30%,
+                    rgba(32, 32, 32, 1) 100%
+                  );
+                "
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <!-- inizio elemento carousel -->
+                    <div class="row p-3">
+                      <div class="col col-3">
+                        <img
+                          src="../assets/imgs/search/image-14.jpg"
+                          class="img-fluid"
+                          alt="img-album"
+                          id="img-album"
+                          style="width: 200px"
+                        />
+                      </div>
+                      <div class="col col-8">
+                        <h2 id="nome-album" class="text-light fs-1 fw-bolder">
+                          Nome Album
+                        </h2>
+                        <p class="text-light" id="nome-artista">Nome Artista</p>
+                        <p class="text-light">Ascoltalo subito!</p>
+                        <button
+                          class="btn rounded-pill text-black px-4 me-2"
+                          style="background-color: greenyellow"
+                        >
+                          Play
+                        </button>
+                        <button class="btn btn-outline-light rounded-pill px-4">
+                          Salva
+                        </button>
+                      </div>
+                    </div>
+                    <!-- fine elemento carousel -->
+                  </div>
+
+                  <div class="carousel-item">
+                    <!-- inizio elemento carousel -->
+                    <div class="row p-3">
+                      <div class="col col-3">
+                        <img
+                          src="../assets/imgs/search/image-14.jpg"
+                          class="img-fluid"
+                          alt="img-album"
+                          id="img-album"
+                          style="width: 200px"
+                        />
+                      </div>
+                      <div class="col col-8">
+                        <h2 id="nome-album-2" class="text-light fs-1 fw-bolder">
+                          Nome Album
+                        </h2>
+                        <p class="text-light" id="nome-artista-2">
+                          Nome Artista
+                        </p>
+                        <p class="text-light">Ascoltalo subito!</p>
+                        <button
+                          class="btn rounded-pill text-black px-4 me-2"
+                          style="background-color: greenyellow"
+                        >
+                          Play
+                        </button>
+                        <button class="btn btn-outline-light rounded-pill px-4">
+                          Salva
+                        </button>
+                      </div>
+                    </div>
+                    <!-- fine elemento carousel -->
+                  </div>
+                  <div class="carousel-item">
+                    <!-- inizio elemento carousel -->
+                    <div class="row p-3">
+                      <div class="col col-3">
+                        <img
+                          src="../assets/imgs/search/image-14.jpg"
+                          class="img-fluid"
+                          alt="img-album"
+                          id="img-album"
+                          style="width: 200px"
+                        />
+                      </div>
+                      <div class="col col-8">
+                        <h2 id="nome-album-3" class="text-light fs-1 fw-bolder">
+                          Nome Album
+                        </h2>
+                        <p class="text-light" id="nome-artista-3">
+                          Nome Artista
+                        </p>
+                        <p class="text-light">Ascoltalo subito!</p>
+                        <button
+                          class="btn rounded-pill text-black px-4 me-2"
+                          style="background-color: greenyellow"
+                        >
+                          Play
+                        </button>
+                        <button class="btn btn-outline-light rounded-pill px-4">
+                          Salva
+                        </button>
+                      </div>
+                    </div>
+                    <!-- fine elemento carousel -->
+                  </div>
+                </div>
+              </div>
               <!-- fine carousel -->
             </div>
           </div>
