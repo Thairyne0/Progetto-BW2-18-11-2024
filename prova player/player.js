@@ -1,11 +1,7 @@
 const audio = document.getElementById('audio')
 const playButton = document.getElementById('play')
-const pauseButton = document.getElementById('pause')
-const prevButton = document.getElementById('prev')
-const nextButton = document.getElementById('next')
 const trackTitle = document.getElementById('track-title')
-const currentTimeDisplay = document.getElementById('current-time')
-const durationDisplay = document.getElementById('duration')
+const artist = document.getElementById('artist')
 
 // Array of tracks
 const tracks = [
@@ -23,29 +19,26 @@ function loadTrack(index) {
   audio.load()
 }
 
-// Update time display
-function updateTimeDisplay() {
-  const currentTime = Math.floor(audio.currentTime)
-  const duration = Math.floor(audio.duration)
-  currentTimeDisplay.textContent = formatTime(currentTime)
-  durationDisplay.textContent = formatTime(duration)
-}
+// // Play track
+// playButton.addEventListener('click', () => {
+//   audio.play()
+// })
 
-// Format time in MM:SS
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60)
-  const secs = seconds % 60
-  return `${minutes}:${secs < 10 ? '0' : ''}${secs}`
-}
+// // Pause track
+// pauseButton.addEventListener('click', () => {
+//   audio.pause()
+// })
 
-// Play track
 playButton.addEventListener('click', () => {
-  audio.play()
-})
-
-// Pause track
-pauseButton.addEventListener('click', () => {
-  audio.pause()
+  if (audio.paused) {
+    audio.play()
+    playButton.innerHTML =
+      '<i class="bi bi-pause-fill me-2 fs-3 text-white"></i>'
+  } else {
+    audio.pause()
+    playButton.innerHTML =
+      '<i class="bi bi-play-fill me-2 fs-3 text-white"></i>'
+  }
 })
 
 // Previous track
@@ -61,9 +54,6 @@ nextButton.addEventListener('click', () => {
   loadTrack(currentTrackIndex)
   audio.play()
 })
-
-// Update time display as the track plays
-audio.addEventListener('timeupdate', updateTimeDisplay)
 
 // Load the first track on page load
 loadTrack(currentTrackIndex)
