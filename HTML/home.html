@@ -26,7 +26,7 @@
             src="../assets/imgs/logo.svg"
             alt="logo"
             class="img-fluid rounded p-2"
-            style="width: 150px; background-color: greenyellow"
+            style="width: 150px; background-color: #1ed760"
           />
           <button
             class="navbar-toggler"
@@ -119,7 +119,7 @@
                   <a class="nav-link active" aria-current="page" href="#"
                     ><i
                       class="bi bi-bookmark-fill px-2 py-1 rounded-1"
-                      style="color: greenyellow; background-color: green"
+                      style="color: #1ed760; background-color: green"
                     ></i>
                     I tuoi episodi</a
                   >
@@ -133,7 +133,7 @@
                 placeholder="Cerca"
                 aria-label="Search"
               /> -->
-                <button class="btn" type="submit" style="color: greenyellow">
+                <button class="btn" type="submit" style="color: #1ed760">
                   <i class="bi bi-search-heart"></i>
                 </button>
               </form>
@@ -144,10 +144,495 @@
     </header>
     <!-- inizio del main -->
     <main>
-      <div class="container-fluid">
+      <div class="container-fluid" style="margin-top: 80px">
         <div class="row">
-          <div class="col d-none d-flex col-lg-4"></div>
-          <div class="col col-12 col-lg-8"></div>
+          <div class="col col-lg-3 d-none d-lg-block fixed-top sticky-top">
+            <h2 class="text-light ms-2">Le tue playlist</h2>
+            <hr class="text-light" />
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2"
+              >Nome della mia playlist</a
+            >
+          </div>
+          <!-- inizio main col -->
+          <div
+            class="col col-12 col-lg-9 p-4"
+            style="background-color: #202020"
+          >
+            <div class="row justify-content-between mt-2">
+              <div class="col col-6">
+                <button
+                  type="button"
+                  class="btn rounded-circle text-light"
+                  style="background-color: #121212"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="prev"
+                >
+                  <i class="bi bi-caret-left"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn rounded-circle text-light"
+                  style="background-color: #121212"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="next"
+                >
+                  <i class="bi bi-caret-right"></i>
+                </button>
+              </div>
+              <div class="col col-6 d-flex justify-content-end">
+                <button
+                  id="dropdown-user-name"
+                  class="btn btn-sm dropdown-toggle rounded-pill text-light"
+                  style="background-color: black"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="../assets/imgs/search/image-3.jpg"
+                    class="img-fluid rounded-circle me-1"
+                    style="width: 30px"
+                    alt="user-image"
+                  />
+                  Nome Utente
+                </button>
+                <ul class="dropdown-menu">
+                  ...
+                </ul>
+              </div>
+            </div>
+            <div class="row p-2">
+              <!-- inizio carousel -->
+              <div
+                id="carouselExample"
+                class="carousel slide rounded d-none d-sm-block"
+                style="
+                  background: linear-gradient(
+                    7deg,
+                    rgba(0, 0, 0, 1) 30%,
+                    rgba(32, 32, 32, 1) 100%
+                  );
+                "
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <!-- inizio elemento carousel -->
+                    <div class="row p-3">
+                      <div class="col col-3">
+                        <img
+                          src="../assets/imgs/search/image-14.jpg"
+                          class="img-fluid"
+                          alt="img-album"
+                          id="img-album"
+                          style="width: 200px"
+                        />
+                      </div>
+                      <div class="col col-8">
+                        <h2 id="nome-album" class="text-light fs-1 fw-bolder">
+                          Nome Album
+                        </h2>
+                        <p class="text-light" id="nome-artista">Nome Artista</p>
+                        <p class="text-light">Ascoltalo subito!</p>
+                        <button
+                          class="btn rounded-pill text-black px-4 me-2"
+                          style="background-color: #1ed760"
+                        >
+                          Play
+                        </button>
+                        <button class="btn btn-outline-light rounded-pill px-4">
+                          Salva
+                        </button>
+                      </div>
+                    </div>
+                    <!-- fine elemento carousel -->
+                  </div>
+
+                  <div class="carousel-item">
+                    <!-- inizio elemento carousel -->
+                    <div class="row p-3">
+                      <div class="col col-3">
+                        <img
+                          src="../assets/imgs/search/image-14.jpg"
+                          class="img-fluid"
+                          alt="img-album"
+                          id="img-album-1"
+                          style="width: 200px"
+                        />
+                      </div>
+                      <div class="col col-8">
+                        <h2 id="nome-album-2" class="text-light fs-1 fw-bolder">
+                          Nome Album
+                        </h2>
+                        <p class="text-light" id="nome-artista-2">
+                          Nome Artista
+                        </p>
+                        <p class="text-light">Ascoltalo subito!</p>
+                        <button
+                          class="btn rounded-pill text-black px-4 me-2"
+                          style="background-color: #1ed760"
+                        >
+                          Play
+                        </button>
+                        <button class="btn btn-outline-light rounded-pill px-4">
+                          Salva
+                        </button>
+                      </div>
+                    </div>
+                    <!-- fine elemento carousel -->
+                  </div>
+                  <div class="carousel-item">
+                    <!-- inizio elemento carousel -->
+                    <div class="row p-3">
+                      <div class="col col-3">
+                        <img
+                          src="../assets/imgs/search/image-14.jpg"
+                          class="img-fluid"
+                          alt="img-album"
+                          id="img-album-2"
+                          style="width: 200px"
+                        />
+                      </div>
+                      <div class="col col-8">
+                        <h2 id="nome-album-3" class="text-light fs-1 fw-bolder">
+                          Nome Album
+                        </h2>
+                        <p class="text-light" id="nome-artista-3">
+                          Nome Artista
+                        </p>
+                        <p class="text-light">Ascoltalo subito!</p>
+                        <button
+                          class="btn rounded-pill text-black px-4 me-2"
+                          style="background-color: #1ed760"
+                        >
+                          Play
+                        </button>
+                        <button class="btn btn-outline-light rounded-pill px-4">
+                          Salva
+                        </button>
+                      </div>
+                    </div>
+                    <!-- fine elemento carousel -->
+                  </div>
+                </div>
+              </div>
+              <!-- fine carousel -->
+            </div>
+            <h2 class="text-light fw-bold">Buonasera</h2>
+            <div
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 m-1 row-gap-2"
+            >
+              <div class="col rounded" style="background-color: #2d2d2d">
+                <a href="#" class="text-decoration-none">
+                  <div class="row">
+                    <div class="col col-3 p-0 d-flex">
+                      <img
+                        id="img-playlist-1"
+                        src="../assets/imgs/search/image-2.jpg"
+                        class="img-fluid rounded-start"
+                        alt="image"
+                        style="width: 70px"
+                      />
+                    </div>
+                    <div class="col col-9 d-flex align-items-center">
+                      <h6 id="nome-playlist-home-1" class="text-light fw-bold">
+                        Nome playlist
+                      </h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col rounded" style="background-color: #2d2d2d">
+                <a href="#" class="text-decoration-none">
+                  <div class="row">
+                    <div class="col col-3 p-0">
+                      <img
+                        id="img-playlist-2"
+                        src="../assets/imgs/search/image-2.jpg"
+                        class="img-fluid rounded-start"
+                        alt="image"
+                        style="width: 70px"
+                      />
+                    </div>
+                    <div class="col col-9 d-flex align-items-center">
+                      <h6 id="nome-playlist-home-2" class="text-light fw-bold">
+                        Nome playlist
+                      </h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col rounded" style="background-color: #2d2d2d">
+                <a href="#" class="text-decoration-none">
+                  <div class="row">
+                    <div class="col col-3 p-0">
+                      <img
+                        id="img-playlist-3"
+                        src="../assets/imgs/search/image-2.jpg"
+                        class="img-fluid rounded-start"
+                        alt="image"
+                        style="width: 70px"
+                      />
+                    </div>
+                    <div class="col col-9 d-flex align-items-center">
+                      <h6 id="nome-playlist-home-3" class="text-light fw-bold">
+                        Nome playlist
+                      </h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col rounded" style="background-color: #2d2d2d">
+                <a href="#" class="text-decoration-none">
+                  <div class="row">
+                    <div class="col col-3 p-0">
+                      <img
+                        id="img-playlist-4"
+                        src="../assets/imgs/search/image-2.jpg"
+                        class="img-fluid rounded-start"
+                        alt="image"
+                        style="width: 70px"
+                      />
+                    </div>
+                    <div class="col col-9 d-flex align-items-center">
+                      <h6 id="nome-playlist-home-4" class="text-light fw-bold">
+                        Nome playlist
+                      </h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col rounded" style="background-color: #2d2d2d">
+                <a href="#" class="text-decoration-none">
+                  <div class="row">
+                    <div class="col col-3 p-0">
+                      <img
+                        id="img-playlist-5"
+                        src="../assets/imgs/search/image-2.jpg"
+                        class="img-fluid rounded-start"
+                        alt="image"
+                        style="width: 70px"
+                      />
+                    </div>
+                    <div class="col col-9 d-flex align-items-center">
+                      <h6 id="nome-playlist-home-5" class="text-light fw-bold">
+                        Nome playlist
+                      </h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col rounded" style="background-color: #2d2d2d">
+                <a href="#" class="text-decoration-none">
+                  <div class="row">
+                    <div class="col col-3 p-0">
+                      <img
+                        id="img-playlist-6"
+                        src="../assets/imgs/search/image-2.jpg"
+                        class="img-fluid rounded-start"
+                        alt="image"
+                        style="width: 70px"
+                      />
+                    </div>
+                    <div class="col col-9 d-flex align-items-center">
+                      <h6 id="nome-playlist-home-6" class="text-light fw-bold">
+                        Nome playlist
+                      </h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h2 class="text-light fs-4 fw-bold mt-4 mb-4">
+                  Altro di ció che ti paiace
+                </h2>
+              </div>
+              <div class="col d-flex align-items-center justify-content-end">
+                <a href="#" class="text-decoration-none text-light fs-6"
+                  >VISUALIZZA TUTTO</a
+                >
+              </div>
+            </div>
+            <div
+              class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-around gap-5"
+            >
+              <div class="col rounded p-3" style="background-color: #171717">
+                <a href="#" class="text-decoration-none">
+                  <img
+                    src="../assets/imgs/main/image-17.jpg"
+                    class="contenitore-img-album w-100 img-fluid mb-2 rounded"
+                    alt="image"
+                    style="width: 200px"
+                  />
+                  <h6 class="nome-album-contenitore text-light fw-bold">
+                    Nome Album
+                  </h6>
+                  <p class="descrizione-album-contenitore text-light mb-0">
+                    Descrizione playlist
+                  </p>
+                </a>
+              </div>
+              <div class="col rounded p-3" style="background-color: #171717">
+                <a href="#" class="text-decoration-none">
+                  <img
+                    src="../assets/imgs/main/image-17.jpg"
+                    class="contenitore-img-album w-100 img-fluid mb-2 rounded"
+                    alt="image"
+                    style="width: 200px"
+                  />
+                  <h6 class="nome-album-contenitore text-light fw-bold">
+                    Nome Album
+                  </h6>
+                  <p class="descrizione-album-contenitore text-light mb-0">
+                    Descrizione playlist
+                  </p>
+                </a>
+              </div>
+              <div class="col rounded p-3" style="background-color: #171717">
+                <a href="#" class="text-decoration-none">
+                  <img
+                    src="../assets/imgs/main/image-17.jpg"
+                    class="contenitore-img-album w-100 img-fluid mb-2 rounded"
+                    alt="image"
+                    style="width: 200px"
+                  />
+                  <h6 class="nome-album-contenitore text-light fw-bold">
+                    Nome Album
+                  </h6>
+                  <p class="descrizione-album-contenitore text-light mb-0">
+                    Descrizione playlist
+                  </p>
+                </a>
+              </div>
+              <div class="col rounded p-3" style="background-color: #171717">
+                <a href="#" class="text-decoration-none">
+                  <img
+                    src="../assets/imgs/main/image-17.jpg"
+                    class="contenitore-img-album w-100 img-fluid mb-2 rounded"
+                    alt="image"
+                    style="width: 200px"
+                  />
+                  <h6 class="nome-album-contenitore text-light fw-bold">
+                    Nome Album
+                  </h6>
+                  <p class="descrizione-album-contenitore text-light mb-0">
+                    Descrizione playlist
+                  </p>
+                </a>
+              </div>
+              <div class="col rounded p-3" style="background-color: #171717">
+                <a href="#" class="text-decoration-none">
+                  <img
+                    src="../assets/imgs/main/image-17.jpg"
+                    class="contenitore-img-album w-100 img-fluid mb-2 rounded"
+                    alt="image"
+                    style="width: 200px"
+                  />
+                  <h6 class="nome-album-contenitore text-light fw-bold">
+                    Nome Album
+                  </h6>
+                  <p class="descrizione-album-contenitore text-light mb-0">
+                    Descrizione playlist
+                  </p>
+                </a>
+              </div>
+              <div class="col rounded p-3" style="background-color: #171717">
+                <a href="#" class="text-decoration-none">
+                  <img
+                    src="../assets/imgs/main/image-17.jpg"
+                    class="contenitore-img-album w-100 img-fluid mb-2 rounded"
+                    alt="image"
+                    style="width: 200px"
+                  />
+                  <h6 class="nome-album-contenitore text-light fw-bold">
+                    Nome Album
+                  </h6>
+                  <p class="descrizione-album-contenitore text-light mb-0">
+                    Descrizione playlist
+                  </p>
+                </a>
+              </div>
+              <div class="col rounded p-3" style="background-color: #171717">
+                <a href="#" class="text-decoration-none">
+                  <img
+                    src="../assets/imgs/main/image-17.jpg"
+                    class="contenitore-img-album w-100 img-fluid mb-2 rounded"
+                    alt="image"
+                    style="width: 200px"
+                  />
+                  <h6 class="nome-album-contenitore text-light fw-bold">
+                    Nome Album
+                  </h6>
+                  <p class="descrizione-album-contenitore text-light mb-0">
+                    Descrizione playlist
+                  </p>
+                </a>
+              </div>
+              <div class="col rounded p-3" style="background-color: #171717">
+                <a href="#" class="text-decoration-none">
+                  <img
+                    src="../assets/imgs/main/image-17.jpg"
+                    class="contenitore-img-album w-100 img-fluid mb-2 rounded"
+                    alt="image"
+                    style="width: 200px"
+                  />
+                  <h6 class="nome-album-contenitore text-light fw-bold">
+                    Nome Album
+                  </h6>
+                  <p class="descrizione-album-contenitore text-light mb-0">
+                    Descrizione playlist
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- fine main col -->
         </div>
       </div>
     </main>
