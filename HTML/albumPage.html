@@ -422,10 +422,40 @@
       </div>
     </main>
     <!-- fine main -->
+    <!-- inizio footer -->
+    <footer class="container-fluid position-fixed bottom-0 m-0 p-0">
+      <div
+        class="music-player d-flex flex-wrap bg-black text-white justify-content-between"
+      >
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <div id="album_cover" class="mx-2 rounded">
+            <img src="https://placecats.com/40/40" alt="" />
+          </div>
+          <div class="text-start">
+            <p id="track-title" class="m-0 fs-6">Track Title</p>
+            <p id="artist" class="m-0">Artista</p>
+          </div>
+        </div>
+        <audio id="audio" src="track1.mp3"></audio>
+        <div class="d-flex flex-wrap align-items-center">
+          <i class="bi bi-pc-display mx-2"></i>
+          <button id="like" class="likeButton m-0 bg-black border-0 p-0">
+            <i class="bi bi-heart mx-2 text-white"></i>
+          </button>
+          <button id="play" class="playButton ms-0 bg-black border-0 p-0">
+            <i class="bi bi-play-fill mx-2 fs-3 text-white"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+    <!-- fine footer -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../prova player/player.js"></script>
   </body>
 </html>
