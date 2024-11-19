@@ -1,5 +1,6 @@
 const audio = document.getElementById('audio')
 const playButton = document.getElementById('play')
+const likeButton = document.getElementById('like')
 const trackTitle = document.getElementById('track-title')
 const artist = document.getElementById('artist')
 
@@ -29,15 +30,20 @@ function loadTrack(index) {
 //   audio.pause()
 // })
 
+likeButton.addEventListener('click', () => {
+  likeButton.innerHTML =
+    '<i class="bi bi-check-lg mx-2 text-white bg-success rounded-circle"></i>'
+})
+
 playButton.addEventListener('click', () => {
   if (audio.paused) {
     audio.play()
     playButton.innerHTML =
-      '<i class="bi bi-pause-fill me-2 fs-3 text-white"></i>'
+      '<i class="bi bi-pause-fill mx-2 fs-3 text-white"></i>'
   } else {
     audio.pause()
     playButton.innerHTML =
-      '<i class="bi bi-play-fill me-2 fs-3 text-white"></i>'
+      '<i class="bi bi-play-fill mx-2 fs-3 text-white"></i>'
   }
 })
 
