@@ -208,7 +208,6 @@
           <!-- inizio main col -->
           <div
             class="col col-12 col-lg-9 p-4 placeholder-glow"
-            id="main-placeholder"
             style="background-color: #202020"
           >
             <div class="row justify-content-between mt-2">
@@ -386,6 +385,7 @@
             <h2 class="text-light fw-bold">Buonasera</h2>
             <div
               class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 m-1 row-gap-2"
+              id="buonasera-placeholder"
             >
               <div class="col rounded" style="background-color: #2d2d2d">
                 <a href="#" class="text-decoration-none">
@@ -526,6 +526,10 @@
                 </a>
               </div>
             </div>
+            <div
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 m-1 row-gap-2 d-none"
+              id="buonasera-container"
+            ></div>
             <div class="row">
               <div class="col">
                 <h2 class="text-light fs-4 fw-bold mt-4 mb-4">
@@ -540,6 +544,7 @@
             </div>
             <div
               class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-around gap-5"
+              id="main-placeholder"
             >
               <div class="col rounded p-3" style="background-color: #171717">
                 <a href="#" class="text-decoration-none">
@@ -702,12 +707,11 @@
                 </a>
               </div>
             </div>
+            <div
+              class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-around gap-5 d-none"
+              id="main-container"
+            ></div>
           </div>
-          <div
-            class="col col-12 col-lg-9 p-4 d-none"
-            id="main-container"
-            style="background-color: #202020"
-          ></div>
           <!-- fine main col -->
         </div>
       </div>
@@ -718,5 +722,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../JAVASCRIPT/homeLogic.js"></script>
   </body>
 </html>
