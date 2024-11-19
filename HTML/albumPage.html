@@ -204,169 +204,216 @@
                 >
               </div>
               <!-- FINE COLONNA PLAYLIST -->
+
               <!-- INIZIO COLONNA ALBUM -->
-              <div class="col col-12 col-lg-8 bg-warning">
-                <div class="d-lg-flex d-md-flex">
-                  <div class="bg-primary col-lg-4">
-                    <div class="row bg-white">
-                      <div class="col col-1 pt-3 d-lg-none d-md-none">
-                        <i class="bi bi-arrow-left"></i>
-                      </div>
-                      <div class="col col-10 col-lg-12">
+              <div class="col col-12 col-lg-8">
+                <div>
+                  <article class="d-lg-flex">
+                    <div class="col-lg-3">
+                      <div class="row">
+                        <div class="col col-1 pt-3 d-lg-none d-md-none">
+                          <i class="bi bi-arrow-left"></i>
+                        </div>
+                        <div class="col col-10 col-lg-12 col-md-12">
+                          <div
+                            id="album_cover"
+                            class="d-flex justify-content-sm-center justify-content-md-start justify-content-lg-start"
+                          >
+                            <img
+                              class="my-4"
+                              src="https://placecats.com/290/290"
+                              alt="album-cover"
+                            />
+                          </div>
+                        </div>
                         <div
-                          id="album_cover"
-                          class="d-flex justify-content-sm-center justify-content-md-start justify-content-lg-start"
-                        >
+                          class="col col-1 col-lg-3 d-lg-none d-md-none"
+                        ></div>
+                      </div>
+                    </div>
+                    <section
+                      class="d-flex align-items-lg-end align-items-md-end col-8"
+                    >
+                      <div>
+                        <div class="my-3">
+                          <p class="album d-sm-none d-lg-block d-md-block m-0">
+                            ALBUM
+                          </p>
+                          <h1 class="fs-lg-1 fs-sm-5">Gioventù brucata</h1>
+                        </div>
+                        <div class="d-flex my-2 d-lg-none d-md-none">
                           <img
-                            class="my-4"
-                            src="https://placecats.com/200/200"
-                            alt="album-cover"
+                            class="rounded-circle me-2"
+                            src="https://placecats.com/30/30"
+                            alt="artist-img"
                           />
+                          <h5>Pinguini tattici nucleari</h5>
+                        </div>
+                        <div
+                          class="d-lg-flex d-md-flex align-items-center mb-3"
+                        >
+                          <div
+                            style="height: 20px"
+                            class="d-flex d-lg-flex my-2 align-items-center me-1 d-sm-none d-lg-inline"
+                          >
+                            <img
+                              class="rounded-circle me-1"
+                              src="https://placecats.com/20/20"
+                              alt="artist-img"
+                            />
+                            <p id="nameArtistLg" class="m-0 p-0">
+                              Pinguini tattici nucleari
+                            </p>
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <p class="album2 mb-0 me-1 d-lg-none">Album</p>
+                            <p id="dateArtistLg" class="mb-0 me-1">• 2017</p>
+                            <p
+                              id="braniArtistLg"
+                              class="mb-0 me-1 d-none d-lg-block"
+                            >
+                              • 12 brani,
+                            </p>
+                            <p
+                              id="timeArtistLg"
+                              class="mb-0 text-secondary d-none d-lg-block"
+                            >
+                              53 min 20 sec
+                            </p>
+                          </div>
                         </div>
                       </div>
-                      <div class="col col-1 d-lg-none d-md-none"></div>
-                    </div>
-                  </div>
-                  <section class="bg-success col-8">
-                    <div class="my-3">
-                      <p class="d-sm-none d-lg-block d-md-block m-0">Album</p>
-                      <h1>Gioventù brucata</h1>
-                    </div>
-                    <div class="d-flex my-2 bg-primary d-lg-none d-md-none">
-                      <img
-                        class="rounded-circle me-2"
-                        src="https://placecats.com/30/30"
-                        alt="artist-img"
-                      />
-                      <h5>Pinguini tattici nucleari</h5>
-                    </div>
-                    <div class="d-flex bg-primary align-items-center">
-                      <div
-                        style="height: 20px"
-                        class="d-flex my-2 bg-primary align-items-center me-1 d-sm-none d-lg-inline d-md-inline"
-                      >
-                        <img
-                          class="rounded-circle me-2"
-                          src="https://placecats.com/20/20"
-                          alt="artist-img"
-                        />
-                        <p class="m-0 p-0">Pinguini tattici nucleari</p>
+                    </section>
+                  </article>
+                  <section>
+                    <div
+                      class="d-flex direction-row justify-content-between align-items-center"
+                    >
+                      <div>
+                        <i class="bi bi-heart fs-2 me-4"></i>
+                        <i class="bi bi-arrow-down-circle fs-2 me-4"></i>
+                        <i class="bi bi-three-dots-vertical fs-2 me-4"></i>
                       </div>
-                      <div class="d-flex">
-                        <p class="mb-0 me-1 d-lg-none d-md-none">Album</p>
-                        <p class="mb-0 me-1">• 2017</p>
-                        <p class="mb-0 me-1">• 12 brani,</p>
-                        <p class="mb-0">53 min 20 sec</p>
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-shuffle fs-1 me-4"></i>
+                        <div
+                          style="
+                            width: 50px;
+                            height: 50px;
+                            background-position: cover center;
+                          "
+                          class="fs-1 d-flex align-items-center justify-content-center rounded-circle bg-success"
+                        >
+                          <i class="bi bi-play-fill"></i>
+                        </div>
                       </div>
                     </div>
                   </section>
+                  <div id="canzoni"></div>
                 </div>
-                <section>
-                  <div
-                    class="d-flex direction-row justify-content-between align-items-center"
-                  >
-                    <div>
-                      <i class="bi bi-heart fs-2 me-4"></i>
-                      <i class="bi bi-arrow-down-circle fs-2 me-4"></i>
-                      <i class="bi bi-three-dots-vertical fs-2 me-4"></i>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <i class="bi bi-shuffle fs-1 me-4"></i>
-                      <div
-                        style="
-                          width: 50px;
-                          height: 50px;
-                          background-position: cover;
-                        "
-                        class="bg-success fs-1 d-flex align-items-center justify-content-center rounded-circle"
-                      >
-                        <i class="bi bi-play-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                <div id="canzoni"></div>
               </div>
               <!-- FINE COLONNA ALBUM -->
               <!-- INIZIO COLONNA ATTIVITà AMICI -->
               <div class="col col-lg-2 d-none d-lg-block">
-                <div class="d-flex justify-content-between mb-3">
-                  <p class="text-light me-5">Attività amici</p>
-                  <i class="bi bi-person-plus"></i>
-                  <i class="bi bi-x"></i>
-                </div>
-                <div class="d-flex justify-content-between align-items-start">
-                  <div class="mb-5">
-                    <div class="mt-1">
-                      <img
-                        class="rounded-circle me-2"
-                        src="https://placecats.com/31/31"
-                        alt=""
-                      />
-                    </div>
-                  </div>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <p class="text-light fs-4 me-5 m-0">Attività amici</p>
                   <div>
-                    <p id="nome_amico" class="m-0">Charlie Hookham</p>
-                    <p id="album_amico" class="m-0 mt-1">
-                      In Camera • Yumi Zouma
-                    </p>
-                    <div class="d-flex align-items-center mt-1">
-                      <i id="icon_disc" class="bi bi-disc me-2"></i>
-                      <p id="canzone_amico" class="m-0">EP III</p>
+                    <i class="bi bi-person-plus me-1"></i>
+                    <i class="bi bi-x"></i>
+                  </div>
+                </div>
+                <!-- AMICO N-1 -->
+                <div
+                  class="d-flex justify-content-between align-items-start mb-4"
+                >
+                  <div class="d-flex">
+                    <div class="mb-5">
+                      <div class="mt-1">
+                        <img
+                          class="rounded-circle me-3"
+                          src="https://placecats.com/31/31"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <p id="nome_amico" class="m-0">Charlie Hookham</p>
+                      <p id="album_amico" class="m-0 mt-1">
+                        In Camera • Yumi Zouma
+                      </p>
+                      <div class="d-flex align-items-center mt-1">
+                        <i id="icon_disc" class="bi bi-disc me-2"></i>
+                        <p id="canzone_amico" class="m-0">EP III</p>
+                      </div>
                     </div>
                   </div>
                   <div>
                     <p id="ore_amico" class="text-end ms-4">4 ore</p>
                   </div>
                 </div>
-                <div class="d-flex justify-content-between align-items-start">
-                  <div class="mb-5">
-                    <div class="mt-1">
-                      <img
-                        class="rounded-circle me-2"
-                        src="https://placecats.com/30/30"
-                        alt=""
-                      />
+                <!-- AMICO N-1 -->
+                <!-- AMICO N-2 -->
+                <div
+                  class="d-flex justify-content-between align-items-start mb-4"
+                >
+                  <div class="d-flex">
+                    <div class="mb-5">
+                      <div class="mt-1">
+                        <img
+                          class="rounded-circle me-3"
+                          src="https://placecats.com/30/30"
+                          alt=""
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <p id="nome_amico" class="m-0">lightdark02</p>
-                    <p id="album_amico" class="m-0 mt-1">
-                      Aimed to Kill • Jade LeMac
-                    </p>
-                    <div class="d-flex align-items-center mt-1">
-                      <i id="icon_disc" class="bi bi-disc me-2"></i>
-                      <p id="canzone_amico" class="m-0">Aimed to Kill</p>
+                    <div>
+                      <p id="nome_amico" class="m-0">lightdark02</p>
+                      <p id="album_amico" class="m-0 mt-1">
+                        Aimed to Kill • Jade LeMac
+                      </p>
+                      <div class="d-flex align-items-center mt-1">
+                        <i id="icon_disc" class="bi bi-disc me-2"></i>
+                        <p id="canzone_amico" class="m-0">Aimed to Kill</p>
+                      </div>
                     </div>
                   </div>
                   <div>
                     <p id="ore_amico" class="text-end ms-4">8 ore</p>
                   </div>
                 </div>
-                <div class="d-flex justify-content-between align-items-start">
-                  <div>
-                    <div class="mt-1">
-                      <img
-                        class="rounded-circle me-2"
-                        src="https://placecats.com/29/29"
-                        alt=""
-                      />
+                <!-- AMICO N-2-->
+                <!-- AMICO N-3 -->
+                <div
+                  class="d-flex justify-content-between align-items-start mb-4"
+                >
+                  <div class="d-flex">
+                    <div class="mb-5">
+                      <div class="mt-1">
+                        <img
+                          class="rounded-circle me-3"
+                          src="https://placecats.com/29/29"
+                          alt=""
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <p id="nome_amico" class="m-0">Valeria Traverso</p>
-                    <p id="album_amico" class="m-0 mt-1">
-                      New Kings • Sleeping Wolf
-                    </p>
-                    <div class="d-flex align-items-center mt-1">
-                      <i id="icon_disc" class="bi bi-disc me-2"></i>
-                      <p id="canzone_amico" class="m-0">Twint Badass mood</p>
+                    <div>
+                      <p id="nome_amico" class="m-0">Valeria Traverso</p>
+                      <p id="album_amico" class="m-0 mt-1">
+                        New Kings • Sleeping Wolf
+                      </p>
+                      <div class="d-flex align-items-center mt-1">
+                        <i id="icon_disc" class="bi bi-disc me-2"></i>
+                        <p id="canzone_amico" class="m-0">Twint Badass mood</p>
+                      </div>
                     </div>
                   </div>
                   <div>
                     <p id="ore_amico" class="text-end ms-4">3 giorni</p>
                   </div>
                 </div>
+                <!-- AMICO N-3 -->
               </div>
               <!-- FINE COLONNA ATTIVITà AMICI -->
             </div>
@@ -375,10 +422,40 @@
       </div>
     </main>
     <!-- fine main -->
+    <!-- inizio footer -->
+    <footer class="container-fluid position-fixed bottom-0 m-0 p-0">
+      <div
+        class="music-player d-flex flex-wrap bg-black text-white justify-content-between"
+      >
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <div id="album_cover" class="mx-2 rounded">
+            <img src="https://placecats.com/40/40" alt="" />
+          </div>
+          <div class="text-start">
+            <p id="track-title" class="m-0 fs-6">Track Title</p>
+            <p id="artist" class="m-0">Artista</p>
+          </div>
+        </div>
+        <audio id="audio" src="track1.mp3"></audio>
+        <div class="d-flex flex-wrap align-items-center">
+          <i class="bi bi-pc-display mx-2"></i>
+          <button id="like" class="likeButton m-0 bg-black border-0 p-0">
+            <i class="bi bi-heart mx-2 text-white"></i>
+          </button>
+          <button id="play" class="playButton ms-0 bg-black border-0 p-0">
+            <i class="bi bi-play-fill mx-2 fs-3 text-white"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+    <!-- fine footer -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../prova player/player.js"></script>
   </body>
 </html>

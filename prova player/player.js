@@ -31,8 +31,7 @@ function loadTrack(index) {
 // })
 
 likeButton.addEventListener('click', () => {
-  likeButton.innerHTML =
-    '<i class="bi bi-check-lg mx-2 text-white bg-success rounded-circle"></i>'
+  likeButton.innerHTML = '<i class="bi bi-heart-fill mx-2 text-success"></i>'
 })
 
 playButton.addEventListener('click', () => {
