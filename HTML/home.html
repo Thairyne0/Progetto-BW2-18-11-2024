@@ -146,61 +146,68 @@
     <main>
       <div class="container-fluid" style="margin-top: 80px">
         <div class="row">
-          <div class="col col-lg-3 d-none d-lg-block fixed-top sticky-top">
+          <div
+            class="col col-lg-3 d-none d-lg-block fixed-top sticky-top placeholder-glow"
+            id="playlist-placeholder"
+          >
             <h2 class="text-light ms-2">Le tue playlist</h2>
             <hr class="text-light" />
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
             <a
-              class="playlist-container text-light text-decoration-none d-block mb-2"
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
               >Nome della mia playlist</a
             >
           </div>
+          <div
+            class="col col-lg-3 d-none fixed-top sticky-top"
+            id="playlist-container"
+          ></div>
           <!-- inizio main col -->
           <div
-            class="col col-12 col-lg-9 p-4"
+            class="col col-12 col-lg-9 p-4 placeholder-glow"
             style="background-color: #202020"
           >
             <div class="row justify-content-between mt-2">
@@ -227,7 +234,7 @@
               <div class="col col-6 d-flex justify-content-end">
                 <button
                   id="dropdown-user-name"
-                  class="btn btn-sm dropdown-toggle rounded-pill text-light"
+                  class="btn btn-sm dropdown-toggle rounded-pill text-light placeholder"
                   style="background-color: black"
                   type="button"
                   data-bs-toggle="dropdown"
@@ -259,7 +266,7 @@
                   );
                 "
               >
-                <div class="carousel-inner">
+                <div class="carousel-inner" id="carousel-placeholder">
                   <div class="carousel-item active">
                     <!-- inizio elemento carousel -->
                     <div class="row p-3">
@@ -273,11 +280,21 @@
                         />
                       </div>
                       <div class="col col-8">
-                        <h2 id="nome-album" class="text-light fs-1 fw-bolder">
+                        <h2
+                          id="nome-album"
+                          class="text-light fs-1 fw-bolder placeholder"
+                        >
                           Nome Album
                         </h2>
-                        <p class="text-light" id="nome-artista">Nome Artista</p>
-                        <p class="text-light">Ascoltalo subito!</p>
+                        <p
+                          class="text-light placeholder d-block"
+                          id="nome-artista"
+                        >
+                          Nome Artista
+                        </p>
+                        <p class="text-light placeholder d-block">
+                          Ascoltalo subito!
+                        </p>
                         <button
                           class="btn rounded-pill text-black px-4 me-2"
                           style="background-color: #1ed760"
@@ -305,7 +322,10 @@
                         />
                       </div>
                       <div class="col col-8">
-                        <h2 id="nome-album-2" class="text-light fs-1 fw-bolder">
+                        <h2
+                          id="nome-album-2 "
+                          class="text-light fs-1 fw-bolder"
+                        >
                           Nome Album
                         </h2>
                         <p class="text-light" id="nome-artista-2">
@@ -359,12 +379,17 @@
                     <!-- fine elemento carousel -->
                   </div>
                 </div>
+                <div
+                  class="carousel-inner d-none"
+                  id="carousel-container"
+                ></div>
               </div>
               <!-- fine carousel -->
             </div>
             <h2 class="text-light fw-bold">Buonasera</h2>
             <div
               class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 m-1 row-gap-2"
+              id="buonasera-placeholder"
             >
               <div class="col rounded" style="background-color: #2d2d2d">
                 <a href="#" class="text-decoration-none">
@@ -379,8 +404,11 @@
                       />
                     </div>
                     <div class="col col-9 d-flex align-items-center">
-                      <h6 id="nome-playlist-home-1" class="text-light fw-bold">
-                        Nome playlist
+                      <h6
+                        id="nome-playlist-home-1"
+                        class="text-light fw-bold placeholder"
+                      >
+                        Nome della cosa
                       </h6>
                     </div>
                   </div>
@@ -399,8 +427,11 @@
                       />
                     </div>
                     <div class="col col-9 d-flex align-items-center">
-                      <h6 id="nome-playlist-home-2" class="text-light fw-bold">
-                        Nome playlist
+                      <h6
+                        id="nome-playlist-home-2"
+                        class="text-light fw-bold placeholder"
+                      >
+                        Nome della cosa
                       </h6>
                     </div>
                   </div>
@@ -419,8 +450,11 @@
                       />
                     </div>
                     <div class="col col-9 d-flex align-items-center">
-                      <h6 id="nome-playlist-home-3" class="text-light fw-bold">
-                        Nome playlist
+                      <h6
+                        id="nome-playlist-home-3"
+                        class="text-light fw-bold placeholder"
+                      >
+                        Nome della cosa
                       </h6>
                     </div>
                   </div>
@@ -439,8 +473,11 @@
                       />
                     </div>
                     <div class="col col-9 d-flex align-items-center">
-                      <h6 id="nome-playlist-home-4" class="text-light fw-bold">
-                        Nome playlist
+                      <h6
+                        id="nome-playlist-home-4"
+                        class="text-light fw-bold placeholder"
+                      >
+                        Nome della cosa
                       </h6>
                     </div>
                   </div>
@@ -459,8 +496,11 @@
                       />
                     </div>
                     <div class="col col-9 d-flex align-items-center">
-                      <h6 id="nome-playlist-home-5" class="text-light fw-bold">
-                        Nome playlist
+                      <h6
+                        id="nome-playlist-home-5"
+                        class="text-light fw-bold placeholder"
+                      >
+                        Nome della cosa
                       </h6>
                     </div>
                   </div>
@@ -479,18 +519,25 @@
                       />
                     </div>
                     <div class="col col-9 d-flex align-items-center">
-                      <h6 id="nome-playlist-home-6" class="text-light fw-bold">
-                        Nome playlist
+                      <h6
+                        id="nome-playlist-home-6"
+                        class="text-light fw-bold placeholder"
+                      >
+                        Nome della cosa
                       </h6>
                     </div>
                   </div>
                 </a>
               </div>
             </div>
+            <div
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 m-1 row-gap-2 d-none"
+              id="buonasera-container"
+            ></div>
             <div class="row">
               <div class="col">
                 <h2 class="text-light fs-4 fw-bold mt-4 mb-4">
-                  Altro di ció che ti paiace
+                  Altro di ció che ti piace
                 </h2>
               </div>
               <div class="col d-flex align-items-center justify-content-end">
@@ -501,6 +548,7 @@
             </div>
             <div
               class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-around gap-5"
+              id="main-placeholder"
             >
               <div class="col rounded p-3" style="background-color: #171717">
                 <a href="#" class="text-decoration-none">
@@ -510,10 +558,14 @@
                     alt="image"
                     style="width: 200px"
                   />
-                  <h6 class="nome-album-contenitore text-light fw-bold">
+                  <h6
+                    class="nome-album-contenitore text-light fw-bold placeholder"
+                  >
                     Nome Album
                   </h6>
-                  <p class="descrizione-album-contenitore text-light mb-0">
+                  <p
+                    class="descrizione-album-contenitore text-light mb-0 placeholder"
+                  >
                     Descrizione playlist
                   </p>
                 </a>
@@ -526,10 +578,14 @@
                     alt="image"
                     style="width: 200px"
                   />
-                  <h6 class="nome-album-contenitore text-light fw-bold">
+                  <h6
+                    class="nome-album-contenitore text-light fw-bold placeholder"
+                  >
                     Nome Album
                   </h6>
-                  <p class="descrizione-album-contenitore text-light mb-0">
+                  <p
+                    class="descrizione-album-contenitore text-light mb-0 placeholder"
+                  >
                     Descrizione playlist
                   </p>
                 </a>
@@ -542,10 +598,14 @@
                     alt="image"
                     style="width: 200px"
                   />
-                  <h6 class="nome-album-contenitore text-light fw-bold">
+                  <h6
+                    class="nome-album-contenitore text-light fw-bold placeholder"
+                  >
                     Nome Album
                   </h6>
-                  <p class="descrizione-album-contenitore text-light mb-0">
+                  <p
+                    class="descrizione-album-contenitore text-light mb-0 placeholder"
+                  >
                     Descrizione playlist
                   </p>
                 </a>
@@ -558,10 +618,14 @@
                     alt="image"
                     style="width: 200px"
                   />
-                  <h6 class="nome-album-contenitore text-light fw-bold">
+                  <h6
+                    class="nome-album-contenitore text-light fw-bold placeholder"
+                  >
                     Nome Album
                   </h6>
-                  <p class="descrizione-album-contenitore text-light mb-0">
+                  <p
+                    class="descrizione-album-contenitore text-light mb-0 placeholder"
+                  >
                     Descrizione playlist
                   </p>
                 </a>
@@ -574,10 +638,14 @@
                     alt="image"
                     style="width: 200px"
                   />
-                  <h6 class="nome-album-contenitore text-light fw-bold">
+                  <h6
+                    class="nome-album-contenitore text-light fw-bold placeholder"
+                  >
                     Nome Album
                   </h6>
-                  <p class="descrizione-album-contenitore text-light mb-0">
+                  <p
+                    class="descrizione-album-contenitore text-light mb-0 placeholder"
+                  >
                     Descrizione playlist
                   </p>
                 </a>
@@ -590,10 +658,14 @@
                     alt="image"
                     style="width: 200px"
                   />
-                  <h6 class="nome-album-contenitore text-light fw-bold">
+                  <h6
+                    class="nome-album-contenitore text-light fw-bold placeholder"
+                  >
                     Nome Album
                   </h6>
-                  <p class="descrizione-album-contenitore text-light mb-0">
+                  <p
+                    class="descrizione-album-contenitore text-light mb-0 placeholder"
+                  >
                     Descrizione playlist
                   </p>
                 </a>
@@ -606,10 +678,14 @@
                     alt="image"
                     style="width: 200px"
                   />
-                  <h6 class="nome-album-contenitore text-light fw-bold">
+                  <h6
+                    class="nome-album-contenitore text-light fw-bold placeholder"
+                  >
                     Nome Album
                   </h6>
-                  <p class="descrizione-album-contenitore text-light mb-0">
+                  <p
+                    class="descrizione-album-contenitore text-light mb-0 placeholder"
+                  >
                     Descrizione playlist
                   </p>
                 </a>
@@ -622,15 +698,23 @@
                     alt="image"
                     style="width: 200px"
                   />
-                  <h6 class="nome-album-contenitore text-light fw-bold">
+                  <h6
+                    class="nome-album-contenitore text-light fw-bold placeholder"
+                  >
                     Nome Album
                   </h6>
-                  <p class="descrizione-album-contenitore text-light mb-0">
+                  <p
+                    class="descrizione-album-contenitore text-light mb-0 placeholder"
+                  >
                     Descrizione playlist
                   </p>
                 </a>
               </div>
             </div>
+            <div
+              class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-around gap-5 d-none"
+              id="main-container"
+            ></div>
           </div>
           <!-- fine main col -->
         </div>
@@ -642,5 +726,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../JAVASCRIPT/homeLogic.js"></script>
   </body>
 </html>

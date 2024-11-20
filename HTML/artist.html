@@ -154,7 +154,7 @@
       
       
    
-    <main class="bg-black text-white mt-5">
+    <main class="bg-black text-white mt-3">
         <div class="container-fluid">
           <div class="row">
             <!-- Sidebar Playlist (Colonna Sinistra) -->
@@ -224,17 +224,66 @@
               >
               <!-- Aggiungere altre playlist -->
             </div>
-      
+           
             <!-- Colonna Centrale -->
             <div class="col-lg-7 p-0">
+                
               <!-- Sezione Immagine -->
               <div class="position-relative">
+                <div class="row justify-content-around align-items-start px-1 w-100" id="row-account">
+                    <div class="d-flex">
+                    <div class="col col-6 d-none d-lg-block">
+                      <button
+                        type="button"
+                        class="btn rounded-circle text-light"
+                        style="background-color: #121212"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="prev"
+                      >
+                        <i class="bi bi-caret-left"></i>
+                      </button>
+                     
+                      <button
+                        type="button"
+                        class="btn rounded-circle text-light"
+                        style="background-color: #121212"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="next"
+                      >
+                        <i class="bi bi-caret-right"></i>
+                      </button>
+                    </div>
+                    <div class="col col-6 d-flex justify-content-end">
+                      <button
+                        id="dropdown-user-name"
+                        class="btn btn-sm dropdown-toggle rounded-pill text-light"
+                        style="background-color: black"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                    
+                        <img
+                          src="../assets/imgs/search/image-3.jpg"
+                          class="img-fluid rounded-circle me-1"
+                          style="width: 30px"
+                          alt="user-image"
+                        />
+                        Nome Utente
+                      </button>
+                      <ul class="dropdown-menu">
+                        ...
+                      </ul>
+                    </div>
+                    </div>
+                  </div>
                 <img
                   src="https://placecats.com/800/500"
                   alt="Banner"
                   class="img-fluid w-100"
                   style="height: 50vh; object-fit: cover;"
                 />
+                
                 <div
                   class="position-absolute bottom-0 p-3"
                   style="background: linear-gradient(0deg, rgba(0,0,0,1) 13%, rgba(0,0,0,0.5130252784707633) 74%, rgba(255,255,255,0) 100%); width: 100%;"
