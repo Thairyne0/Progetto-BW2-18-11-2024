@@ -38,11 +38,11 @@ playButton.addEventListener('click', () => {
   if (audio.paused) {
     audio.play()
     playButton.innerHTML =
-      '<i class="bi bi-pause-fill mx-2 fs-3 text-white"></i>'
+      '<i class="bi bi-pause-fill mx-2 fs-1 text-white"></i>'
   } else {
     audio.pause()
     playButton.innerHTML =
-      '<i class="bi bi-play-fill mx-2 fs-3 text-white"></i>'
+      '<i class="bi bi-play-fill mx-2 fs-1 text-white"></i>'
   }
 })
 
