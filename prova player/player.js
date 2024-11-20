@@ -62,3 +62,10 @@ nextButton.addEventListener('click', () => {
 
 // Load the first track on page load
 loadTrack(currentTrackIndex)
+
+const audio2 = document.getElementById('audio-player') // Your audio element
+const volumeSlider = document.getElementById('volume-slider')
+
+volumeSlider.addEventListener('input', function () {
+  audio.volume = volumeSlider.value / 100 // Set volume between 0 and 1
+})

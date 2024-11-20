@@ -1,12 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
-
 .music-player {
     width: 100%;
     height: 50px;
@@ -35,22 +26,3 @@ button {
     height: 35px;
 }
 
-.pauseButtonActivated{
-    background-color: black;
-    border-radius: 0;
-    padding: 0;
-}
-
-.playButtonActivated{
-    background-color: black;
-    border-radius: 0;
-    padding: 0;
-}
-
-.pauseButtonDisactivated{
-    display: none;
-}
-
-.playButtonDisactivated{
-    display: none;
-}
