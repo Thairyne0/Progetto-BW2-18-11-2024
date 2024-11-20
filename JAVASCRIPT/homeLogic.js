@@ -27,7 +27,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=playlist")
     for (let i = 0; i < 6; i++) {
       buonaseraContainer.innerHTML += `
     <div class="col rounded" style="background-color: #2d2d2d">
-                <a href="#" class="text-decoration-none" id = "idMain_${
+                <a href="#" class="mainElement text-decoration-none" id = "idMain_${
                   product.data[numeri[i]].id
                 }">
                   <div class="row">
@@ -67,7 +67,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=playlist")
             <a
               href="#" id = "idPlaylist_${
                 product.data[numeri[i]].id
-              }" class="playlist-container text-light text-decoration-none d-block mb-2"
+              }" class="playlistContainer playlist-container text-light text-decoration-none d-block mb-2"
               >${product.data[i].title}</a
             >
             
@@ -103,7 +103,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=album")
     for (let i = 0; i < 8; i++) {
       mainContainer.innerHTML += `
            <div class="col rounded p-3" style="background-color: #171717">
-                <a href="#" class="text-decoration-none" id = "idAlbumContainer_${
+                <a href="#" class="albumContainer text-decoration-none" id = "idAlbumContainer_${
                   product.data[numeri[i]].id
                 }">
                   <img
