@@ -26,6 +26,12 @@ async function loadAlbumData() {
     data.tracks.data.forEach((track) => {
       const listItem = document.createElement("li")
       listItem.textContent = track.title
+      const duration = document.createElement("span")
+      duration.textContent = track.duration
+      const record = document.createElement("span")
+      record.textContent = track.rank
+      listItem.appendChild(duration)
+      listItem.appendChild(record)
       trackList.appendChild(listItem)
     })
   } catch (error) {
