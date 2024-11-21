@@ -20,15 +20,15 @@ function loadTrack(index) {
   audio.load()
 }
 
-// // Play track
-// playButton.addEventListener('click', () => {
-//   audio.play()
-// })
 
-// // Pause track
-// pauseButton.addEventListener('click', () => {
-//   audio.pause()
-// })
+ playButton.addEventListener('click', () => {
+   audio.play()
+ })
+
+
+pauseButton.addEventListener('click', () => {
+  audio.pause()
+ })
 
 likeButton.addEventListener('click', () => {
   likeButton.innerHTML = '<i class="bi bi-heart-fill mx-2 text-success"></i>'

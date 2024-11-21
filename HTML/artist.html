@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/artist.css">
     
     
+    
   </head>
   <body style="background-color: black">
     <header>
@@ -159,71 +160,59 @@
         <div class="container-fluid">
           <div class="row">
             <!-- Sidebar Playlist (Colonna Sinistra) -->
-            <div class="col-lg-3 d-none d-lg-block">
+            <div class="col col-lg-3 d-none d-lg-block fixed-top sticky-top placeholder-glow"
+            id="playlist-placeholder">
               <h2 class="text-light ms-2">Le tue playlist</h2>
               <hr class="text-light" />
               <!-- Elenco Playlist -->
               <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <a
-                class="playlist-container text-light text-decoration-none d-block mb-2"
-                href="#"
-                >Nome della mia playlist</a
-              >
-              <!-- Aggiungere altre playlist -->
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
+            <a
+              class="playlist-container text-light text-decoration-none d-block mb-2 placeholder"
+              >Nome della mia playlist</a
+            >
             </div>
            
             <!-- Colonna Centrale -->
@@ -234,6 +223,7 @@
                 <div class="row justify-content-around align-items-start px-1 w-100" id="row-account">
                     <div class="d-flex">
                     <div class="col col-6 d-none d-lg-block">
+                        
                       <button
                         type="button"
                         class="btn rounded-circle text-light"
@@ -299,7 +289,7 @@
       
               <!-- Icone, Bottone e Brani -->
               <div id="buttons-section" class="row mt-4 px-3">
-                <div class="col-12 d-flex align-items-center mb-3">
+                <div class="col-12 d-flex align-items-center mb-3 d-lg-none">
                   <img
                     id="artist-photo"
                     src="https://placecats.com/50/50"
@@ -309,7 +299,8 @@
                   />
                   <div>
                     <h5 class="mb-0">Brani che ti piacciono</h5>
-                    <small>8 brani dei Queen</small>
+                    <i class="bi bi-heart-fill d-sm-none" id="cuore"></i>
+                    <small>8 brani</small>
                   </div>
                 </div>
                 <div class="col-12 d-flex justify-content-between align-items-center">
@@ -329,12 +320,12 @@
       
               <!-- Sezione Brani Popolari -->
               <div id="popular-tracks" class="row d-flex  mt-4 px-3">
-                <section class="col-7 align-items-center">
+                <section class="col-7">
                 <h3 class="fs-5">Popolari</h3>
               </section>
               <section class="col-5 d-none d-lg-block d-flex align-items-center mb-3">
                 <h5 class="mb-4">Brani che ti piacciono</h5>
-                  <div>
+                  <div class="liked-tracks-icon">
                     <img
                     id="liked-tracks-img"
                     src="https://placecats.com/50/50"
@@ -342,7 +333,8 @@
                     class="rounded-circle me-3"
                     style="width: 50px; height: 50px; object-fit: cover;"
                   />
-                    <small id="liked-tracks-count">Hai messo Mi piace a 11 brani</small>
+                    <small id="liked-tracks-count">Hai messo Mi piace a 8 brani</small>
+                    <i class="bi bi-heart-fill"></i>
                   </div>
               </section>
               </div>
@@ -440,5 +432,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../JAVASCRIPT/artist.js"></script>
+    
   </body>
 </html>

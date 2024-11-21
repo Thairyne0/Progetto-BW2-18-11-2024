@@ -1,6 +1,6 @@
 
 
-/// ID artista da recuperare (esempio: Pinguini Tattici Nucleari)
+/// ID artista da recuperare 
 const artistId = localStorage.getItem("idAlbumElement")
 console.log(artistId) // Modifica con l'ID dell'artista
 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId;
@@ -31,7 +31,9 @@ function fetchArtistDetails() {
       artistImageElement.src = data.picture_small; // Imposta l'immagine dell'artista
 
       // Aggiorna eventuali altri dettagli come i "Brani che ti piacciono"
-      updatePopularTracks(data.id);
+      updatePopularTracks(data.id, artistImage);
+    
+     
     })
     .catch((error) => {
       console.error("Errore nel recupero dei dati:", error);
@@ -40,7 +42,7 @@ function fetchArtistDetails() {
 }
 
 // Funzione per recuperare i brani popolari dell'artista
-function updatePopularTracks(artistId) {
+function updatePopularTracks(artistId, artistImage) {
     const tracksApiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=8`;
     fetch(tracksApiUrl)
       .then((response) => {
@@ -52,14 +54,31 @@ function updatePopularTracks(artistId) {
       .then((data) => {
         const tracks = data.data;
         const tracksContainer = document.getElementById("popular-tracks");
-  
+      
         // Costruisci l'intero contenuto HTML per i brani
         let tracksHTML = `
-          <section class="col-12">
-            <h3 class="fs-5">Popolari</h3>
+          <section class="col-7">
+            <p class="fs-5">Popolari</p>
           </section>
+          <section class="col-5 d-none d-lg-block d-flex align-items-center mb-3">
+                <h5 class="mb-4">Brani che ti piacciono</h5>
+                 
+              </section>
         `;
-  
+       let tracksHTML2 = `
+        
+        <div class=" col-lg-5 liked-tracks-icon d-none d-lg-block d-flex align-items-center mb-3">
+               <img
+               id="liked-tracks-img"
+               src="${artistImage}"
+               alt="Artist"
+               class="rounded-circle me-3"
+               style="width: 50px; height: 50px; object-fit: cover;"
+             />
+               <small id="liked-tracks-count">Hai messo Mi piace a 8 brani</small>
+               <i class="bi bi-heart-fill"></i>
+             </div>
+     `;
         tracks.forEach((track, index) => {
           // Calcola la durata in formato mm:ss
           const minutes = Math.floor(track.duration / 60);
@@ -68,7 +87,7 @@ function updatePopularTracks(artistId) {
   
           // Aggiungi il brano all'HTML
           tracksHTML += `
-            <div class="col-lg-6 d-flex align-items-center mb-3">
+            <div class="col-lg-7 d-flex align-items-center mb-3">
               <span class="me-3">${index + 1}</span>
               <img src="${track.album.cover_small}" alt="${track.title}" 
                    class="rounded me-3" style="width: 50px; height: 50px; object-fit: cover;">
@@ -77,9 +96,11 @@ function updatePopularTracks(artistId) {
                 <small>${formattedDuration}</small>
               </div>
             </div>
-          `;
+             
+          `+tracksHTML2;
+          tracksHTML2=""
         });
-  
+       
         // Aggiorna il contenitore dei brani con il nuovo contenuto
         tracksContainer.innerHTML = tracksHTML;
       })
