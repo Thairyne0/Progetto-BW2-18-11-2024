@@ -76,7 +76,7 @@ function updatePopularTracks(artistId, artistImage) {
                style="width: 50px; height: 50px; object-fit: cover;"
              />
                <small id="liked-tracks-count">Hai messo Mi piace a 8 brani</small>
-               <i class="bi bi-heart-fill"></i>
+              
              </div>
      `;
         tracks.forEach((track, index) => {
