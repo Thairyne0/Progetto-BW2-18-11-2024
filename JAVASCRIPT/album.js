@@ -48,4 +48,4 @@ async function loadAlbumData() {
   }
 }
 
-window.onload = loadAlbumData;
+// window.onload = loadAlbumData;
