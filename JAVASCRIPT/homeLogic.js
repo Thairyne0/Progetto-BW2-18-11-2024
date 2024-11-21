@@ -62,8 +62,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=playlist")
         event.defaultPrevented;
         let posizioneTratto = event.target.id.indexOf("_");
         let idProdotto = event.target.id.slice(posizioneTratto + 1);
-        localStorage.setItem("idMainElement", idProdotto);
-        console.log(localStorage.getItem("idMainElement"));
+        localStorage.setItem("idAlbumElement", idProdotto);
+        console.log(localStorage.getItem("idAlbumElement"));
       });
     }
 
@@ -98,8 +98,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=playlist")
         console.log(event.target.id);
         let posizioneTratto = event.target.id.indexOf("_");
         let idProdotto = event.target.id.slice(posizioneTratto + 1);
-        localStorage.setItem("idPlaylistElement", idProdotto);
-        console.log(localStorage.getItem("idPlaylistElement"));
+        localStorage.setItem("idAlbumElement", idProdotto);
+        console.log(localStorage.getItem("idAlbumElement"));
       });
     }
   })
@@ -289,12 +289,17 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=album")
                   >
                   ${product.data[numeri[i]].album.title}
                   </h6>
+                  
+                  <a href="./artist.html" class="text-decoration-none">
                   <p
                     class="descrizione-album-contenitore text-light mb-0 "
-                    id = "idAlbumContainerH6D_${product.data[numeri[i]].id}"
+                    id = "idAlbumContainerH6D_${
+                      product.data[numeri[i]].artist.id
+                    }"
                   >
                   ${product.data[numeri[i]].artist.name}
                   </p>
+                  </a>
                 </a>
               </div>
         `;
