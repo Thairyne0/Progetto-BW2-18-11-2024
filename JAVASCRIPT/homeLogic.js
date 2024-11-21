@@ -6,6 +6,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=rock")
   .then((product) => {
     console.log("Product", product);
 
+    console.log(product.data[0].album.id);
+
     const buonaseraPlaceholder = document.getElementById(
       "buonasera-placeholder"
     );
@@ -114,6 +116,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=album")
   })
   .then((product) => {
     console.log("Product", product);
+
+    console.log("MANNAGGIA TUTTO");
+
+    console.log(product.data[0].album.id);
 
     let numeri = Array.from({ length: 25 }, (_, i) => i);
 
@@ -275,24 +281,28 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=album")
            <div class="col rounded p-3" style="background-color: #171717" id = "idAlbumContainerDiv_${
              product.data[numeri[i]].id
            }">
-                <a href="#" class="albumContainer text-decoration-none" >
+                <a href="./albumPage.html" class="albumContainer text-decoration-none" >
                   <img
                     src=${product.data[numeri[i]].album.cover_medium}
                     class="contenitore-img-album w-100 img-fluid mb-2 rounded"
                     alt="image"
                     style="width: 200px"
-                    id = "idAlbumContainerImg_${product.data[numeri[i]].id}"
+                    id = "idAlbumContainerImg_${
+                      product.data[numeri[i]].album.id
+                    }"
                   />
                   <h6
                     class="nome-album-contenitore text-light fw-bold "
-                    id = "idAlbumContainerH6_${product.data[numeri[i]].id}"
+                    id = "idAlbumContainerH6_${
+                      product.data[numeri[i]].album.id
+                    }"
                   >
                   ${product.data[numeri[i]].album.title}
                   </h6>
                   
-                  <a href="#" class="artista-album-contenitore text-decoration-none">
+                  <a href="./artist.html" class=" text-decoration-none">
                   <p
-                    class="text-light mb-0 "
+                    class="descrizione-album-contenitore text-light mb-0 "
                     id = "idAlbumContainerH6D_${
                       product.data[numeri[i]].artist.id
                     }"
@@ -320,7 +330,17 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=album")
       });
     }
 
-    console.log(artistaAlbumContainer[0].id);
+    for (let i = 0; i < artistaAlbumContainer.length; i++) {
+      artistaAlbumContainer[i].addEventListener("click", function (event) {
+        console.log(event);
+        event.defaultPrevented;
+        console.log(event.target.id);
+        let posizioneTratto = event.target.id.indexOf("_");
+        let idProdotto = event.target.id.slice(posizioneTratto + 1);
+        localStorage.setItem("idAlbumElement", idProdotto);
+        console.log(localStorage.getItem("idAlbumElement"));
+      });
+    }
   })
   .catch((error) => {
     console.log(error);
@@ -334,5 +354,5 @@ const playlistContainer = document.getElementsByClassName("playlistContainer");
 const albumContainerLogic = document.getElementsByClassName("albumContainer");
 
 const artistaAlbumContainer = document.getElementsByClassName(
-  "artista-album-contenitore"
+  "descrizione-album-contenitore"
 );
