@@ -52,3 +52,17 @@ font-size: 1em;
     font-size: 0.8em;
     font-weight: 600;
 }
+
+.music-player {
+    width: 100%;
+    height: 120px;
+}
+
+#album_cover_player{
+    width: 80px;
+    height: 80px;
+}
+
+#seek-bar{
+    width: 75%;
+}
