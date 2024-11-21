@@ -9,6 +9,7 @@ const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + art
 function fetchArtistDetails() {
   fetch(apiUrl)
     .then((response) => {
+        console.log("Status API:", response.status);
       if (!response.ok) {
         throw new Error(`Errore API: ${response.statusText}`);
       }
@@ -18,7 +19,7 @@ function fetchArtistDetails() {
       // Estrarre dati dall'oggetto ricevuto
       const artistName = data.name;
       const artistListeners = data.nb_fan;
-      const artistImage = data.picture_xl;
+      const artistImage = data.picture_xl || data.picture_big || data.picture_medium || data.picture_small;
 
       // Aggiornare l'HTML dinamicamente
       document.getElementById("artist-name").innerHTML = artistName;
@@ -40,46 +41,54 @@ function fetchArtistDetails() {
 
 // Funzione per recuperare i brani popolari dell'artista
 function updatePopularTracks(artistId) {
-  const tracksApiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=8`;
-  fetch(tracksApiUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Errore API: ${response.statusText}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const tracks = data.data;
-      const tracksContainer = document.getElementById("popular-tracks");
-
-      // Rimuove contenuto precedente (se esiste) e aggiunge i nuovi brani
-      tracksContainer.innerHTML = `
-        <section class="col-12">
-          <h3 class="fs-5">Popolari</h3>
-        </section>
-      `;
-      
-      tracks.forEach((track, index) => {
-        const trackElement = document.createElement("div");
-        trackElement.classList = " col-lg-6 d-flex align-items-center mb-3";
-        trackElement.innerHTML = `
-          <span class="me-3">${index + 1}</span>
-          <img src="${track.album.cover_small}" alt="${track.title}" 
-               class="rounded me-3" style="width: 50px; height: 50px; object-fit: cover;">
-          <div>
-            <h6 class="mb-0">${track.title}</h6>
-            <small>${(track.duration / 60).toFixed(2)} min</small>
-          </div>
+    const tracksApiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=8`;
+    fetch(tracksApiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Errore API: ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const tracks = data.data;
+        const tracksContainer = document.getElementById("popular-tracks");
+  
+        // Costruisci l'intero contenuto HTML per i brani
+        let tracksHTML = `
+          <section class="col-12">
+            <h3 class="fs-5">Popolari</h3>
+          </section>
         `;
-        tracksContainer.appendChild(trackElement);
+  
+        tracks.forEach((track, index) => {
+          // Calcola la durata in formato mm:ss
+          const minutes = Math.floor(track.duration / 60);
+          const seconds = track.duration % 60;
+          const formattedDuration = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  
+          // Aggiungi il brano all'HTML
+          tracksHTML += `
+            <div class="col-lg-6 d-flex align-items-center mb-3">
+              <span class="me-3">${index + 1}</span>
+              <img src="${track.album.cover_small}" alt="${track.title}" 
+                   class="rounded me-3" style="width: 50px; height: 50px; object-fit: cover;">
+              <div>
+                <h6 class="mb-0">${track.title}</h6>
+                <small>${formattedDuration}</small>
+              </div>
+            </div>
+          `;
+        });
+  
+        // Aggiorna il contenitore dei brani con il nuovo contenuto
+        tracksContainer.innerHTML = tracksHTML;
+      })
+      .catch((error) => {
+        console.log("Errore nel recupero dei brani:", error);
+        const tracksContainer = document.getElementById("popular-tracks");
+        tracksContainer.innerHTML = `<p class="text-danger">Errore nel caricamento dei brani</p>`;
       });
-    })
-    .catch((error) => {
-      console.error("Errore nel recupero dei brani:", error);
-      const tracksContainer = document.getElementById("popular-tracks");
-      tracksContainer.innerHTML = `<p class="text-danger">Errore nel caricamento dei brani</p>`;
-    });
-}
-
-// Avvio del caricamento quando la pagina è pronta
-document.addEventListener("DOMContentLoaded", fetchArtistDetails);
+  }
+  
+  // Avvio del caricamento quando la pagina è pronta
+  document.addEventListener("DOMContentLoaded", fetchArtistDetails);
