@@ -1,9 +1,9 @@
-
-
 /// ID artista da recuperare (esempio: Pinguini Tattici Nucleari)
-const artistId = localStorage.getItem("idAlbumElement")
-console.log(artistId) // Modifica con l'ID dell'artista
-const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId;
+console.log(localStorage.getItem("idAlbumElement"));
+const artistId = localStorage.getItem("idAlbumElement");
+console.log(artistId); // Modifica con l'ID dell'artista
+const apiUrl =
+  "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId;
 
 // Funzione per recuperare i dati dell'artista e aggiornare il DOM
 function fetchArtistDetails() {
@@ -22,7 +22,9 @@ function fetchArtistDetails() {
 
       // Aggiornare l'HTML dinamicamente
       document.getElementById("artist-name").innerHTML = artistName;
-      document.getElementById("artist-listeners").innerHTML = `${artistListeners.toLocaleString()} ascoltatori mensili`;
+      document.getElementById(
+        "artist-listeners"
+      ).innerHTML = `${artistListeners.toLocaleString()} ascoltatori mensili`;
       document.getElementById("artist-banner").src = artistImage;
 
       // Aggiorna l'immagine dei "Brani che ti piacciono"
@@ -34,7 +36,8 @@ function fetchArtistDetails() {
     })
     .catch((error) => {
       console.error("Errore nel recupero dei dati:", error);
-      document.getElementById("artist-name").innerText = "Errore nel caricamento";
+      document.getElementById("artist-name").innerText =
+        "Errore nel caricamento";
     });
 }
 
@@ -50,6 +53,7 @@ function updatePopularTracks(artistId) {
     })
     .then((data) => {
       const tracks = data.data;
+      console.log(tracks);
       const tracksContainer = document.getElementById("popular-tracks");
 
       // Rimuove contenuto precedente (se esiste) e aggiunge i nuovi brani
@@ -58,7 +62,7 @@ function updatePopularTracks(artistId) {
           <h3 class="fs-5">Popolari</h3>
         </section>
       `;
-      
+
       tracks.forEach((track, index) => {
         const trackElement = document.createElement("div");
         trackElement.classList = " col-lg-6 d-flex align-items-center mb-3";
