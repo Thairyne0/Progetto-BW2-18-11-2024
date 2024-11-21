@@ -58,7 +58,7 @@ function updatePopularTracks(artistId, artistImage) {
         // Costruisci l'intero contenuto HTML per i brani
         let tracksHTML = `
           <section class="col-7">
-            <p class="fs-5">Popolari</p>
+            <h5 class="fs-5">Popolari</h5>
           </section>
           <section class="col-5 d-none d-lg-block d-flex align-items-center mb-3">
                 <h5 class="mb-4">Brani che ti piacciono</h5>

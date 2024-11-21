@@ -9,15 +9,3 @@
     z-index: 2;
     height: 100%;
 }
-.bi-heart-fill::before {
-    content: "\f415";
-    position: absolute;
-    right: 36%;
-    top: 72%;
-}
-#cuore {
-    content: "\f415";
-    position: absolute;
-    right: 87%;
-    top: 57%;
-}
