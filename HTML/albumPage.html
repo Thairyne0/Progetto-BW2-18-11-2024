@@ -220,8 +220,9 @@
                             class="d-flex justify-content-sm-center justify-content-md-start justify-content-lg-start"
                           >
                             <img
+                              id="albumImage"
                               class="my-4"
-                              src="https://placecats.com/290/290"
+                              src=""
                               alt="album-cover"
                             />
                           </div>
@@ -239,7 +240,7 @@
                           <p class="album d-sm-none d-lg-block d-md-block m-0">
                             ALBUM
                           </p>
-                          <h1 class="fs-lg-1 fs-sm-5">Gioventù brucata</h1>
+                          <h1 id="albumName" class="fs-lg-1 fs-sm-5"></h1>
                         </div>
                         <div class="d-flex my-2 d-lg-none d-md-none">
                           <img
@@ -247,7 +248,7 @@
                             src="https://placecats.com/30/30"
                             alt="artist-img"
                           />
-                          <h5>Pinguini tattici nucleari</h5>
+                          <h5></h5>
                         </div>
                         <div
                           class="d-lg-flex d-md-flex align-items-center mb-3"
@@ -261,25 +262,23 @@
                               src="https://placecats.com/20/20"
                               alt="artist-img"
                             />
-                            <p id="nameArtistLg" class="m-0 p-0">
+                            <p id="artistName" class="m-0 p-0">
                               Pinguini tattici nucleari
                             </p>
                           </div>
                           <div class="d-flex align-items-center">
                             <p class="album2 mb-0 me-1 d-lg-none">Album</p>
-                            <p id="dateArtistLg" class="mb-0 me-1">• 2017</p>
+                            <p id="dateArtistLg" class="mb-0 me-1">•</p>
                             <p
                               id="braniArtistLg"
                               class="mb-0 me-1 d-none d-lg-block"
                             >
-                              • 12 brani,
+                              • brani,
                             </p>
                             <p
                               id="timeArtistLg"
                               class="mb-0 text-secondary d-none d-lg-block"
-                            >
-                              53 min 20 sec
-                            </p>
+                            ></p>
                           </div>
                         </div>
                       </div>
@@ -310,6 +309,9 @@
                     </div>
                   </section>
                   <div id="canzoni"></div>
+                </div>
+                <div>
+                  <ol id="trackList"></ol>
                 </div>
               </div>
               <!-- FINE COLONNA ALBUM -->
@@ -515,5 +517,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../prova player/player.js"></script>
+    <script src="../JAVASCRIPT/album.js"></script>
   </body>
 </html>
