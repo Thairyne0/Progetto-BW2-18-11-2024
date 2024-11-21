@@ -20,6 +20,9 @@ function loadAlbumData() {
       const artistName = document.getElementById("artistName")
       artistName.textContent = data.artist.name + " •"
 
+      const artistImg = document.getElementById("artistImg")
+      artistImg.src = data.artist.picture_small
+
       const releaseDate = document.getElementById("dateArtistLg")
       releaseDate.textContent = data.release_date + " •"
 
