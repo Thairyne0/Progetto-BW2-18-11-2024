@@ -17,11 +17,19 @@ async function loadAlbumData() {
 
     // Aggiorna il nome dell'artista
     const artistName = document.getElementById("artistName")
-    artistName.textContent = data.artist.name
+    artistName.textContent = data.artist.name + " •"
 
+    const releaseDate = document.getElementById("dateArtistLg")
+    releaseDate.textContent = data.release_date + " •"
+
+    const numTracks = document.getElementById("braniArtistLg")
+    numTracks.textContent = data.nb_tracks + " brani •"
+
+    const duration = document.getElementById("timeArtistLg")
+    duration.textContent = data.duration
     // Aggiungi i brani alla lista
     const trackList = document.getElementById("trackList")
-    trackList.innerHTML = "" // Pulisce la lista precedente, se c'era
+    trackList.innerHTML = ""
 
     data.tracks.data.forEach((track) => {
       const listItem = document.createElement("li")
