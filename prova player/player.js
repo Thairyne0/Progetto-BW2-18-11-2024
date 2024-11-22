@@ -21,13 +21,13 @@ function loadTrack(index) {
 }
 
 
- playButton.addEventListener('click', () => {
-   audio.play()
+playButton.addEventListener('click', () => {
+  audio.play()
  })
 
 
 pauseButton.addEventListener('click', () => {
-  audio.pause()
+   audio.pause()
  })
 
 likeButton.addEventListener('click', () => {
