@@ -80,4 +80,64 @@ function formatDuration(seconds) {
   return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`
 }
 
+function updatePlaylist(tracks) {
+  const playlistPlaceholder = document.getElementById("playlist-placeholder")
+
+  // Rimuovi i contenuti placeholder
+  playlistPlaceholder.innerHTML = `
+    <h2 class="text-light ms-2">Le tue playlist</h2>
+    <hr class="text-light" />
+  `
+
+  // Aggiungere dinamicamente le tracce
+  tracks.forEach((track, index) => {
+    playlistPlaceholder.innerHTML += `
+      <a
+        href="#"
+        id="playlist_${track.id}"
+        class="playlist-container text-light text-decoration-none d-block mb-2"
+      >
+        ${index + 1}. ${track.title}
+      </a>
+    `
+  })
+
+  // Aggiungere gli event listener per ogni elemento della playlist
+  const playlistItems = document.getElementsByClassName("playlist-container")
+  Array.from(playlistItems).forEach((item) => {
+    item.addEventListener("click", function (event) {
+      event.preventDefault()
+      const idProdotto = event.target.id.split("_")[1] // Estrai l'ID della traccia
+      localStorage.setItem("idAlbumElement", idProdotto) // Salva l'ID nel LocalStorage
+      console.log("Playlist cliccata, ID salvato:", idProdotto)
+    })
+  })
+}
+
+// Funzione per recuperare e gestire i dati della playlist
+function fetchPlaylist() {
+  const apiUrl =
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=playlist"
+
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Errore API: ${response.statusText}`)
+      }
+      return response.json()
+    })
+    .then((data) => {
+      const tracks = data.data // Ottieni i brani dalla risposta
+      updatePlaylist(tracks) // Aggiorna la sezione playlist con i dati
+    })
+
+    .catch((error) => {
+      console.error("Errore nel recupero della playlist:", error)
+      playlistPlaceholder.innerHTML = `<p class="text-danger">Errore nel caricamento della playlist</p>`
+    })
+}
+
+// Avvio del caricamento della playlist
+document.addEventListener("DOMContentLoaded", fetchPlaylist)
+
 window.onload = loadAlbumData
