@@ -1,46 +1,65 @@
 
 
 /// ID artista da recuperare 
-const artistId = localStorage.getItem("idAlbumElement")
+let artistId = localStorage.getItem("idAlbumElement")
 console.log(artistId) // Modifica con l'ID dell'artista
 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId;
 
 // Funzione per recuperare i dati dell'artista e aggiornare il DOM
 function fetchArtistDetails() {
-  fetch(apiUrl)
-    .then((response) => {
+    fetch(apiUrl)
+      .then((response) => {
         console.log("Status API:", response.status);
-      if (!response.ok) {
-        throw new Error(`Errore API: ${response.statusText}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Estrarre dati dall'oggetto ricevuto
-      const artistName = data.name;
-      const artistListeners = data.nb_fan;
-      const artistImage = data.picture_xl || data.picture_big || data.picture_medium || data.picture_small;
-
-      // Aggiornare l'HTML dinamicamente
-      document.getElementById("artist-name").innerHTML = artistName;
-      document.getElementById("artist-listeners").innerHTML = `${artistListeners.toLocaleString()} ascoltatori mensili`;
-      document.getElementById("artist-banner").src = artistImage;
-
-      // Aggiorna l'immagine dei "Brani che ti piacciono"
-      const artistImageElement = document.getElementById("artist-photo");
-      artistImageElement.src = data.picture_small; // Imposta l'immagine dell'artista
-
-      // Aggiorna eventuali altri dettagli come i "Brani che ti piacciono"
-      updatePopularTracks(data.id, artistImage);
-    
-     
-    })
-    .catch((error) => {
-      console.error("Errore nel recupero dei dati:", error);
-      document.getElementById("artist-name").innerText = "Errore nel caricamento";
-    });
-}
-
+        if (!response.ok) {
+          throw new Error(`Errore API: ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Dati ricevuti dall'API:", data); // Log della risposta completa dell'API
+  
+        // Verifica la struttura dei dati
+        if (!data || !data.name) {
+          console.error("Dati non corretti nell'API:", data);
+          return;
+        }
+  
+        const artistName = data.name;
+        const artistListeners = data.nb_fan;  // Proviamo a prendere 'nb_fan'
+        const artistImage = data.picture_xl || data.picture_big || data.picture_medium || data.picture_small;
+  
+        // Se nb_fan non è presente, cerchiamo alternative o mettiamo un fallback
+        let formattedListeners = 'Dati non disponibili';
+        if (artistListeners && !isNaN(artistListeners) && artistListeners > 0) {
+          formattedListeners = artistListeners.toLocaleString();
+        } else {
+          // Aggiungi una condizione per verificare se 'nb_fan' è effettivamente presente
+          console.warn("Campo nb_fan non valido o mancante:", artistListeners);
+        }
+  
+        // Log dei dettagli estratti
+        console.log(`Nome artista: ${artistName}`);
+        console.log(`Ascoltatori: ${formattedListeners}`);
+        
+        // Aggiornare l'HTML dinamicamente
+        document.getElementById("artist-name").innerHTML = artistName;
+        document.getElementById("artist-listeners").innerHTML = `${formattedListeners} ascoltatori mensili`;
+        document.getElementById("artist-banner").src = artistImage;
+  
+        // Aggiorna l'immagine dei "Brani che ti piacciono"
+        const artistImageElement = document.getElementById("artist-photo");
+        artistImageElement.src = data.picture_small;
+  
+        // Aggiorna eventuali altri dettagli come i "Brani che ti piacciono"
+        updatePopularTracks(data.id, artistImage);
+      })
+      .catch((error) => {
+        console.error("Errore nel recupero dei dati:", error);
+        document.getElementById("artist-name").innerText = "Errore nel caricamento";
+        document.getElementById("artist-listeners").innerText = "Errore nel caricamento ascoltatori";
+      });
+  }
+  
 // Funzione per recuperare i brani popolari dell'artista
 function updatePopularTracks(artistId, artistImage) {
     const tracksApiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=8`;
@@ -164,6 +183,7 @@ function updatePlaylist(tracks) {
         const tracks = data.data; // Ottieni i brani dalla risposta
         updatePlaylist(tracks); // Aggiorna la sezione playlist con i dati
       })
+     
       .catch((error) => {
         console.error("Errore nel recupero della playlist:", error);
         playlistPlaceholder.innerHTML = `<p class="text-danger">Errore nel caricamento della playlist</p>`;
@@ -172,4 +192,24 @@ function updatePlaylist(tracks) {
   
   // Avvio del caricamento della playlist
   document.addEventListener("DOMContentLoaded", fetchPlaylist);
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    // Seleziona i bottoni prev e next
+    const prevButton = document.getElementById("carousel-prev");
+    const nextButton = document.getElementById("carousel-next");
+  
+    if (prevButton) {
+      // Aggiungi un evento al bottone prev per tornare alla pagina precedente
+      prevButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Evita comportamenti predefiniti
+        window.history.back(); // Torna alla pagina precedente
+      });
+    }
+  
+    if (nextButton) {
+      // Disabilita il bottone next
+      nextButton.disabled = true;
+      nextButton.style.cursor = "not-allowed"; // Cambia il cursore per indicare che il bottone è disabilitato
+    }
+  });
   
